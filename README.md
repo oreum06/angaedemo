@@ -5,13 +5,15 @@ Godot 4 / GDScript로 만든 실행 가능한 마을 입구 프로토타입입�
 
 ## 브라우저에서 바로 플레이
 
-**https://oreum06.github.io/angaedemo/**
+**https://angaegol-wind-compass.linedbutton8.chatgpt.site/**
+
+Sites의 소유자 전용 링크입니다. 이 게임을 만든 ChatGPT 계정으로 로그인해야 합니다. GitHub Pages 주소는 아직 활성화되지 않았습니다.
 
 PC의 Chrome/Edge/Firefox 등 WebGL 2 지원 브라우저에서 실행하세요. 첫 실행은 약 51MB의 엔진·게임 데이터를 다운로드합니다. 키보드 조작이 필요하며, 모바일 터치 조작은 아직 지원하지 않습니다. 현재 플레이 범위는 마을 입구까지입니다.
 
 로컬 Chromium에서 메뉴 시작, 이동, NPC 세 선택지, 선택 결과 대사, 일시정지를 실제 브라우저 입력으로 확인했으며 JavaScript/콘솔 오류는 0건입니다.
 
-웹 빌드는 Godot 4.6.3의 Web export를 사용하며 `variant/thread_support=false`로 GitHub Pages의 기본 헤더 환경에서도 실행됩니다. `main`은 소스, `gh-pages`는 배포 파일입니다. `main` 수정만으로 웹 빌드가 자동 갱신되지는 않습니다.
+웹 빌드는 Godot 4.6.3의 Web export를 사용하며 `variant/thread_support=false`로 GitHub Pages의 기본 헤더 환경에서도 실행됩니다. `main`은 소스, `gh-pages`는 Pages용 웹 빌드입니다. GitHub 연결에 Pages 활성화 권한이 없어 Pages API가 403을 반환했고, 실행 링크는 Sites로 배포했습니다. `main` 수정만으로 웹 빌드가 자동 갱신되지는 않습니다. Sites에서는 큰 WASM/PCK 파일을 4MiB 조각으로 나눠 브라우저에서 재조립합니다. 재조립 SHA-256 일치를 검증했습니다.
 
 재빌드: 같은 버전의 Export Templates 설치 후 `builds/web` 폴더를 만들고 아래 명령을 실행합니다.
 
@@ -21,7 +23,7 @@ godot --headless --path . --export-release Web
 python3 -m http.server 8765 --directory builds/web
 ```
 
-브라우저에서 `http://localhost:8765`를 확인한 뒤 생성된 파일 전부를 `gh-pages` 브랜치 루트에 배포합니다. Pages의 배포 원본은 `gh-pages`, `/`입니다. HTML 파일을 파일 탐색기에서 직접 열면 실행되지 않습니다.
+브라우저에서 `http://localhost:8765`를 확인한 뒤 생성된 파일 전부를 `gh-pages` 브랜치 루트에 배포합니다. 추후 Pages를 사용하려면 저장소 Settings → Pages에서 배포 원본을 `gh-pages`, `/`로 지정합니다. HTML 파일을 파일 탐색기에서 직접 열면 실행되지 않습니다.
 
 ## 실행
 
