@@ -2,6 +2,27 @@
 
 Godot 4 / GDScript로 만든 실행 가능한 마을 입구 프로토타입입니다. 첨부된 GAME_PRD.md와 AGENTS.md를 기준으로, 요청한 **메인 메뉴 → 포미 이동 → 마을 입구 → NPC 상호작용·대화**까지 구현했습니다. 전체 12~18분 데모가 아니라 첫 개발 단계입니다.
 
+
+## 브라우저에서 바로 플레이
+
+**https://oreum06.github.io/angaedemo/**
+
+PC의 Chrome/Edge/Firefox 등 WebGL 2 지원 브라우저에서 실행하세요. 첫 실행은 약 51MB의 엔진·게임 데이터를 다운로드합니다. 키보드 조작이 필요하며, 모바일 터치 조작은 아직 지원하지 않습니다. 현재 플레이 범위는 마을 입구까지입니다.
+
+로컬 Chromium에서 메뉴 시작, 이동, NPC 세 선택지, 선택 결과 대사, 일시정지를 실제 브라우저 입력으로 확인했으며 JavaScript/콘솔 오류는 0건입니다.
+
+웹 빌드는 Godot 4.6.3의 Web export를 사용하며 `variant/thread_support=false`로 GitHub Pages의 기본 헤더 환경에서도 실행됩니다. `main`은 소스, `gh-pages`는 배포 파일입니다. `main` 수정만으로 웹 빌드가 자동 갱신되지는 않습니다.
+
+재빌드: 같은 버전의 Export Templates 설치 후 `builds/web` 폴더를 만들고 아래 명령을 실행합니다.
+
+```sh
+godot --headless --path . --editor --import --quit
+godot --headless --path . --export-release Web
+python3 -m http.server 8765 --directory builds/web
+```
+
+브라우저에서 `http://localhost:8765`를 확인한 뒤 생성된 파일 전부를 `gh-pages` 브랜치 루트에 배포합니다. Pages의 배포 원본은 `gh-pages`, `/`입니다. HTML 파일을 파일 탐색기에서 직접 열면 실행되지 않습니다.
+
 ## 실행
 
 검증 엔진: **Godot 4.6.3 stable**, Compatibility 렌더러. 외부 플러그인 없음.

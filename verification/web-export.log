@@ -1,0 +1,48 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/NotoSansKR.otf-275582575246a2a3043e165b7ddb570d.fontdata[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/fonts/NotoSansKR.otf.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://data/dialogue/entrance.json[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-b8cbd7497334570818808eb66cdf9ba4-pomi.scn[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-83b8e49de6116bcda7c6d66558aa3057-village_entrance.scn[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-6b9c1b1fd6ae6f795188dfdc89e222b0-world.scn[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://scripts/autoload/game_state.gdc[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://scripts/systems/dialogue_manager.gdc[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://scripts/systems/quest_manager.gdc[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/dialogue_box.gdc[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/main_menu.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/ui_style.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://scripts/world/entrance_art.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://scripts/world/pomi.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://scripts/world/resident.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/world/world.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scenes/characters/pomi.tscn.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scenes/maps/village_entrance.tscn.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scenes/main_menu.tscn.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scenes/world.tscn.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/autoload/game_state.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/systems/dialogue_manager.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/systems/quest_manager.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/dialogue_box.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/main_menu.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/ui_style.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/world/entrance_art.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/world/pomi.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/world/resident.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/world/world.gd.remap[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
