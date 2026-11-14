@@ -1,0 +1,40 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS real main scene loaded
+PASS Enter on Start changes to World
+PASS dialogue references and flag keys valid
+PASS start key does not skip introduction
+PASS movement blocked during dialogue
+PASS keyboard repeat ignored
+PASS single confirm advances exactly one node
+PASS rapid repeat suppressed by cooldown
+PASS reveal text does not skip a node
+PASS intro finishes and unlocks movement
+PASS movement resumes after dialogue
+PASS wall collision
+PASS map boundary collision
+PASS NPC collision
+PASS NPC range prompt
+PASS E opens nearest NPC dialogue
+PASS choice keyboard navigation
+PASS Enter commits exactly selected choice
+PASS fruit choice updates quest and unlocks sign
+PASS closing key cannot immediately reopen dialogue
+PASS repeat NPC interaction is idempotent
+PASS branch 0 reaches BAKERY without dead end
+PASS branch 0 preserves choice flag
+PASS branch 1 reaches BAKERY without dead end
+PASS branch 1 preserves choice flag
+PASS branch 2 reaches BAKERY without dead end
+PASS branch 2 preserves choice flag
+PASS out-of-order sign gives guidance
+PASS locked sign cannot bypass fruit event
+PASS completed event opens destination dialogue
+PASS stage boundary explains next development step
+PASS Esc pauses game during choices
+PASS pause freezes physics
+PASS resume preserves dialogue
+PASS pause menu returns to main menu
+PASS menu return resets flags and input lock
+PASS new game starts cleanly after menu return
+INTEGRATION checks=37 failures=0

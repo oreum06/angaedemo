@@ -1,0 +1,112 @@
+{
+  "nodes": {
+    "intro_1": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "구겨진 버스표, 황동 바람나침반… 다 있네.\n휴대폰은 신호가 잡히지 않는다.",
+      "next": "intro_2"
+    },
+    "intro_2": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "너무 조용한데. 길을 잘못 든 건가?\n낯선 사람이 돌아다니면 이상하게 보이려나.",
+      "next": "intro_3"
+    },
+    "intro_3": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "저쪽에 누가 쉬고 있다. 발치에는 과일이 떨어져 있고.\n가까이 가 볼까.",
+      "set": {
+        "intro_done": true
+      },
+      "next": ""
+    },
+    "fruit_start": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "잠든 것 같은데… 길을 물어봐도 괜찮을까?",
+      "choices": [
+        {
+          "text": "깨워서 길을 묻는다",
+          "next": "fruit_wake",
+          "set": {
+            "fruit_choice": "wake"
+          }
+        },
+        {
+          "text": "떨어진 과일을 줍는다",
+          "next": "fruit_pick",
+          "set": {
+            "fruit_choice": "pick"
+          }
+        },
+        {
+          "text": "조용히 지나간다",
+          "next": "fruit_pass",
+          "set": {
+            "fruit_choice": "pass"
+          }
+        }
+      ]
+    },
+    "fruit_wake": {
+      "speaker": "쉬고 있던 주민",
+      "text": "응? 빵집을 찾니? 저 표지판 쪽으로 가면 돼.\n나는 조금 더 쉬려고.",
+      "next": "fruit_wake_thought"
+    },
+    "fruit_wake_thought": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "깨우면 싫어할 줄 알았는데. 길만 알려주고 다시 쉬네.",
+      "set": {
+        "fruit_event_done": true
+      },
+      "next": ""
+    },
+    "fruit_pick": {
+      "speaker": "쉬고 있던 주민",
+      "text": "아, 떨어졌구나. 주워줘서 고마워. 나머지는 내가 할게.\n빵 냄새 나는 곳을 찾으면 저 표지판 따라가 봐.",
+      "next": "fruit_pick_thought"
+    },
+    "fruit_pick_thought": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "끝까지 다 주워야 할 것 같았는데… 여기까지만 해도 되는구나.",
+      "set": {
+        "fruit_event_done": true
+      },
+      "next": ""
+    },
+    "fruit_pass": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "지금은 깨우지 말자. 저쪽에 빵집 표지판이 보인다.\n굳이 말을 걸지 않아도 길을 찾을 수 있네.",
+      "set": {
+        "fruit_event_done": true
+      },
+      "next": ""
+    },
+    "fruit_repeat": {
+      "speaker": "쉬고 있던 주민",
+      "text": "빵집은 오른쪽 길이야. 나는 여기서 바람 좀 쐴게.",
+      "next": ""
+    },
+    "gate_locked": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "빵집으로 이어지는 길인가?\n먼저 쉬고 있는 주민 곁에서 방향을 확인해 보자.",
+      "next": ""
+    },
+    "gate_ready": {
+      "speaker": "포미",
+      "style": "thought",
+      "text": "빵집은 이쪽이구나. 조금 마음이 놓인다.",
+      "next": "stage_end"
+    },
+    "stage_end": {
+      "speaker": "첫 걸음의 끝",
+      "text": "마을 입구 체험은 여기까지입니다.\n빵집 이야기는 다음 개발 단계에서 이어집니다.",
+      "next": ""
+    }
+  }
+}
