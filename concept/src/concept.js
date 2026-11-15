@@ -52,14 +52,36 @@ async function cropped(cid, pose) { const k = cid + ':' + pose; return cropUrl[k
 // ---------- music ----------
 const bgm = $('#bgm');
 let vol = store.get(VOL_KEY, 60), muted = store.get(VOL_KEY + '.muted', false);
-function applyVol() { bgm.volume = muted ? 0 : vol / 100; $('#soundBtn').classList.toggle('off', muted || vol === 0); }
-async function fadeIn() {
-  applyVol(); const target = bgm.volume; bgm.volume = 0;
-  try { await bgm.play(); } catch { return; }
-  for (let i = 1; i <= 20; i++) { bgm.volume = target * i / 20; await wait(60); }
+function applyVol() {
+  bgm.volume = muted ? 0 : vol / 100;
+  $('#soundBtn').classList.toggle('off', muted || vol === 0);
+  syncSoundPrompt();
 }
-$('#soundBtn').addEventListener('click', e => { e.stopPropagation(); toggleMute(); });
-function toggleMute() { muted = !muted; store.set(VOL_KEY + '.muted', muted); applyVol(); if (!muted && bgm.paused) bgm.play().catch(() => {}); }
+// Browsers may refuse playback (autoplay policy, or the first gesture not counting).
+// play() is called synchronously inside every user gesture until it succeeds.
+function tryPlay() {
+  if (muted || vol === 0 || !bgm.paused) return;
+  applyVol();
+  const p = bgm.play();
+  if (p) p.then(syncSoundPrompt, syncSoundPrompt);
+}
+bgm.addEventListener('playing', syncSoundPrompt);
+bgm.addEventListener('pause', syncSoundPrompt);
+// if music is not audible on a screen where it should be, make the ♪ button say so
+function syncSoundPrompt() {
+  const silent = bgm.paused || muted || vol === 0;
+  $('#soundBtn').classList.toggle('prompt', silent && current !== 'gate');
+}
+for (const ev of ['pointerdown', 'keydown', 'touchend']) addEventListener(ev, e => { if (!e.target.closest?.('#soundBtn')) tryPlay(); }, true);
+$('#soundBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  if (bgm.paused || muted || vol === 0) {         // silent → turn music on, whatever the reason
+    muted = false; store.set(VOL_KEY + '.muted', false);
+    if (vol === 0) { vol = 60; store.set(VOL_KEY, vol); }
+    applyVol(); bgm.play().then(syncSoundPrompt, syncSoundPrompt);
+  } else toggleMute();
+});
+function toggleMute() { muted = !muted; store.set(VOL_KEY + '.muted', muted); applyVol(); if (!muted) tryPlay(); }
 
 // ---------- screens ----------
 const screens = ['gate', 'title', 'places', 'cast'];
@@ -70,6 +92,7 @@ function show(name) {
   document.body.className = (STILL ? 'still ' : '') + 'at-' + name;
   $('#soundBtn').classList.toggle('hidden', name === 'gate');
   if (name === 'title') focusTitle(0);
+  syncSoundPrompt();
 }
 async function go(name, before) {
   if (STILL) { await before?.(); show(name); return; }
@@ -79,7 +102,8 @@ async function go(name, before) {
 }
 
 // gate
-$('#gateBtn').addEventListener('click', () => { fadeIn(); go('title'); });
+// the gate un-mutes: a visitor who presses "start" expects to hear the title music
+$('#gateBtn').addEventListener('click', () => { muted = false; store.set(VOL_KEY + '.muted', false); if (vol === 0) vol = 60; tryPlay(); go('title'); });
 
 // title
 const titleBtns = [...document.querySelectorAll('.title-menu button')];
