@@ -1,0 +1,31 @@
+{
+  "note": "Concept preview only: which places and which people were designed. No story, dialogue or choices.",
+  "stage": { "baseline": 1450, "pxPerCm": 7.5, "positions": { "left": 600, "right": 1330, "center": 960 } },
+  "characters": {
+    "pomi":       { "name": "포미", "en": "Pomi", "role": "안개골의 방문자 · 주인공", "heightCm": 162, "home": "village_bus_stop",
+                    "poses": { "observe": "관찰", "smile": "미소", "greet": "인사", "puzzled": "갸웃", "surprised": "놀람", "wary": "경계" } },
+    "maru":       { "name": "마루", "en": "Maru", "role": "빵집 주인", "heightCm": 158, "home": "bakery",
+                    "poses": { "neutral": "기본", "welcome": "환영", "offer_bread": "빵을 건넴", "cafe": "카페" } },
+    "soren":      { "name": "소렌", "en": "Soren", "role": "마을 청년", "heightCm": 172, "home": "wooden_bridge",
+                    "poses": { "casual": "기본", "bright_laugh": "웃음", "casual_laugh": "장난", "wave": "손 흔듦", "reach_out": "손 내밈", "crossbody": "생각" } },
+    "karuviya":   { "name": "카루비야 할머니", "en": "Karubiya", "role": "마을의 어른", "heightCm": 150, "home": "grandma_house",
+                    "poses": { "laugh": "웃음", "think": "생각", "tea": "차 한잔", "basket": "바구니" } },
+    "woodpecker": { "name": "딱따구리 아저씨", "en": "Woodpecker", "role": "목공 장인", "heightCm": 175, "home": "carpenter_workshop",
+                    "poses": { "thinking": "생각", "proud_laugh": "웃음", "open_arms": "두 팔 벌림", "birdhouse_walk": "새집" } }
+  },
+  "files": {
+    "karuviya": { "sheet": "assets/portraits/karuviya/_posesheet_b.png", "flood": 22, "soft": 60, "scale": 1,
+                  "rects": { "laugh": [20, 0, 535, 887], "think": [545, 0, 330, 887], "tea": [915, 0, 340, 887], "basket": [1265, 0, 505, 887] } }
+  },
+  "places": [
+    { "id": "bus_interior",       "name": "시골 버스",        "time": "늦은 오후", "file": "assets/backgrounds/bg_bus_interior.jpg",       "cast": { "pomi": "observe" } },
+    { "id": "village_entrance",   "name": "마을 입구",        "time": "늦은 오후", "file": "assets/backgrounds/bg_village_day.png",        "cast": { "pomi": "puzzled", "karuviya": "basket" } },
+    { "id": "grandma_house",      "name": "카루비야 할머니 댁", "time": "오후",     "file": "assets/backgrounds/bg_grandma_house.jpg",     "cast": { "pomi": "smile", "karuviya": "tea" } },
+    { "id": "bakery",             "name": "마루의 빵집",      "time": "아침",     "file": "assets/backgrounds/bg_bakery.jpg",            "cast": { "pomi": "observe", "maru": "offer_bread" } },
+    { "id": "wooden_bridge",      "name": "시냇가 나무 다리",  "time": "오후",     "file": "assets/backgrounds/bg_wooden_bridge.jpg",     "cast": { "pomi": "surprised", "soren": "wave" } },
+    { "id": "festival_prep",      "name": "가을 모임 준비터",  "time": "낮",       "file": "assets/backgrounds/bg_festival_prep.jpg",     "cast": { "pomi": "smile", "soren": "bright_laugh" } },
+    { "id": "carpenter_workshop", "name": "목공 작업장",      "time": "오전",     "file": "assets/backgrounds/bg_carpenter_workshop.jpg","cast": { "pomi": "greet", "woodpecker": "thinking" } },
+    { "id": "festival_night",     "name": "가을 모임 광장",    "time": "밤",       "file": "assets/backgrounds/bg_festival_night.jpg",    "cast": { "pomi": "smile", "maru": "welcome" }, "tod": "night" },
+    { "id": "village_bus_stop",   "name": "마을 정류장",      "time": "아침",     "file": "assets/backgrounds/bg_village_bus_stop.jpg",  "cast": { "pomi": "greet", "karuviya": "laugh" } }
+  ]
+}
